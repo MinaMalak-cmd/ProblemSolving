@@ -11,7 +11,7 @@ int main()
     cin.tie(NULL);
     int t,n;
     cin >>t >>n;
-    pair<long long, long long> nums[n]={make_pair(0,0)};
+    pair<long long, long long> nums[n];
     while(t--){
         for(int i=0;i<n;i++){
             cin >>nums[i].first>>nums[i].second;
@@ -19,7 +19,7 @@ int main()
     }
     sort(nums,nums+n,compare);
      for(int i=0;i<n;i++){
-            cout << nums[i].first <<" "<< nums[i].second<<endl;
+            cout << nums[i].first <<" "<< nums[i].second<<"\n"<<"\n";
         }
     return 0;
 }
