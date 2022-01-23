@@ -2,6 +2,7 @@
 #include <stack>
 using namespace std;
 //https://vjudge.net/contest/476841#problem/C
+//https://codeforces.com/problemset/problem/343/B
 
 int main()
 {
