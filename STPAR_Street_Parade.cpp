@@ -1,29 +1,42 @@
 #include <iostream>
 #include <vector>
-#include <queue>
+#include <stack>
+
 using namespace std;
-//https://www.spoj.com/problems/STPAR/en/
-int main()
-{
+void checkValidity(){
     int N;
     cin >>N;
     vector<int> vec; 
-    queue<int>q;
-     for (int i = 0; i <N; i++){
-         int number;
-         cin >> number;
-         if((vec.empty()&&number==1)||(!vec.empty()&&number==vec.back()+1)){
-            vec.push_back(number);
-         }else 
-           q.push(number);
-     }
-    cout << "Elements in vector" <<"\n";
-    for (auto i = vec.begin(); i != vec.end(); ++i)
-        cout << *i << " ";
-    cout <<"\n" << "Elements in queue" <<"\n";
-    while (!q.empty()) {
-        cout << ' ' << q.front();
-        q.pop();
+    bool flag= true;
+    stack<int>st;
+         for (int i = 0; i <N; i++){
+             int number;
+             cin >> number;
+             if((vec.empty()&&number==1)||(!vec.empty()&&number==vec.back()+1)){
+                vec.push_back(number);
+             }else 
+               st.push(number);
+         }
+        while (!st.empty()) {
+            int lastEl = vec.at(vec.size()-1);
+            if(st.top()!=lastEl+1){
+                flag =false;
+            }
+            else{
+              vec.push_back(st.top());  
+                st.pop();
+            }
+        }  
+    int zero;
+    cin >>zero;
+    if(zero==0){
+        cout << (flag?"yes":"no")<<endl;
+        checkValidity();
     }
+    
+}
+int main()
+{
+    checkValidity();
     return 0;
 }
