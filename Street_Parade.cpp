@@ -1,7 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <stack>
-
+//https://www.spoj.com/status/ns=29127468
+//https://vjudge.net/contest/476841#problem/E
 using namespace std;
 void checkValidity(){
     int N;
