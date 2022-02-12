@@ -21,6 +21,7 @@ void checkValidity(){
             int lastEl = vec.at(vec.size()-1);
             if(st.top()!=lastEl+1){
                 flag =false;
+                break;
             }
             else{
               vec.push_back(st.top());  
