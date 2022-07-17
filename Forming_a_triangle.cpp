@@ -1,3 +1,5 @@
+//given an array of stick length check if 
+//there is a way to construct a triangle 
 #include <iostream>
 #include <bits/stdc++.h> 
 using namespace std;
